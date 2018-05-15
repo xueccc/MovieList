@@ -11,24 +11,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Search = function (_React$Component) {
   _inherits(Search, _React$Component);
 
-  function Search() {
+  function Search(props) {
     _classCallCheck(this, Search);
 
-    return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
   }
 
   _createClass(Search, [{
     key: "render",
-
-
-    // constructor() {
-
-    // onClick(event) {
-    //   event.preventDefault();
-    //   console.log(event);
-    // }
-
-
     value: function render() {
       return React.createElement(
         "div",
@@ -36,11 +26,11 @@ var Search = function (_React$Component) {
         React.createElement(
           "form",
           { action: "search" },
-          React.createElement("input", { type: "text", placeholder: "searching..." }),
+          React.createElement("input", { type: "text", placeholder: "searching...",
+            onChange: this.props.onChange }),
           React.createElement(
-            "input",
-            { type: "submit",
-              onClick: "console.log('testing')"
+            "button",
+            { type: "submit"
             },
             "Go!"
           )
@@ -51,4 +41,4 @@ var Search = function (_React$Component) {
 
   return Search;
 }(React.Component);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL3NlYXJjaC5qc3giXSwibmFtZXMiOlsiU2VhcmNoIiwiUmVhY3QiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7SUFBTUEsTTs7Ozs7Ozs7Ozs7OztBQUVKOztBQUVBO0FBQ0E7QUFDQTtBQUNBOzs7NkJBR1U7QUFDUixhQUNFO0FBQUE7QUFBQSxVQUFLLFdBQVUsUUFBZjtBQUNFO0FBQUE7QUFBQSxZQUFNLFFBQU8sUUFBYjtBQUNFLHlDQUFPLE1BQUssTUFBWixFQUFtQixhQUFZLGNBQS9CLEdBREY7QUFFRTtBQUFBO0FBQUEsY0FBTyxNQUFLLFFBQVo7QUFDRSx1QkFBUTtBQURWO0FBQUE7QUFBQTtBQUZGO0FBREYsT0FERjtBQVVEOzs7O0VBckJrQkMsTUFBTUMsUyIsImZpbGUiOiJzZWFyY2guanMiLCJzb3VyY2VzQ29udGVudCI6WyJjbGFzcyBTZWFyY2ggZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuXG4gIC8vIGNvbnN0cnVjdG9yKCkge1xuXG4gIC8vIG9uQ2xpY2soZXZlbnQpIHtcbiAgLy8gICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuICAvLyAgIGNvbnNvbGUubG9nKGV2ZW50KTtcbiAgLy8gfVxuXG4gXG4gIHJlbmRlciAoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2VhcmNoXCI+IFxuICAgICAgICA8Zm9ybSBhY3Rpb249XCJzZWFyY2hcIj5cbiAgICAgICAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cInNlYXJjaGluZy4uLlwiPjwvaW5wdXQ+XG4gICAgICAgICAgPGlucHV0IHR5cGU9XCJzdWJtaXRcIlxuICAgICAgICAgICAgb25DbGljaz1cImNvbnNvbGUubG9nKCd0ZXN0aW5nJylcIlxuICAgICAgICAgID5HbyE8L2lucHV0PlxuICAgICAgICA8L2Zvcm0+XG4gICAgICA8L2Rpdj5cbiAgICApO1xuICB9XG59XG5cbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL3NlYXJjaC5qc3giXSwibmFtZXMiOlsiU2VhcmNoIiwicHJvcHMiLCJvbkNoYW5nZSIsIlJlYWN0IiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0lBQU1BLE07OztBQUVKLGtCQUFZQyxLQUFaLEVBQW1CO0FBQUE7O0FBQUEsMkdBQ1hBLEtBRFc7QUFFbEI7Ozs7NkJBR1M7QUFDUixhQUNFO0FBQUE7QUFBQSxVQUFLLFdBQVUsUUFBZjtBQUNFO0FBQUE7QUFBQSxZQUFNLFFBQU8sUUFBYjtBQUNFLHlDQUFPLE1BQUssTUFBWixFQUFtQixhQUFZLGNBQS9CO0FBQ0Esc0JBQVUsS0FBS0EsS0FBTCxDQUFXQyxRQURyQixHQURGO0FBR0U7QUFBQTtBQUFBLGNBQVEsTUFBSztBQUFiO0FBQUE7QUFBQTtBQUhGO0FBREYsT0FERjtBQVVEOzs7O0VBbEJrQkMsTUFBTUMsUyIsImZpbGUiOiJzZWFyY2guanMiLCJzb3VyY2VzQ29udGVudCI6WyJjbGFzcyBTZWFyY2ggZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuXG4gIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpO1xuICB9XG5cbiBcbiAgcmVuZGVyICgpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJzZWFyY2hcIj4gXG4gICAgICAgIDxmb3JtIGFjdGlvbj1cInNlYXJjaFwiPlxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwidGV4dFwiIHBsYWNlaG9sZGVyPVwic2VhcmNoaW5nLi4uXCIgXG4gICAgICAgICAgb25DaGFuZ2U9e3RoaXMucHJvcHMub25DaGFuZ2V9PjwvaW5wdXQ+XG4gICAgICAgICAgPGJ1dHRvbiB0eXBlPVwic3VibWl0XCJcbiAgICAgICAgICA+R28hPC9idXR0b24+XG4gICAgICAgIDwvZm9ybT5cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cblxuIl19

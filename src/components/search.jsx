@@ -1,21 +1,19 @@
 class Search extends React.Component {
 
-  // constructor() {
-
-  // onClick(event) {
-  //   event.preventDefault();
-  //   console.log(event);
-  // }
+  constructor(props) {
+    super(props);
+  }
 
  
   render () {
     return (
       <div className="search"> 
         <form action="search">
-          <input type="text" placeholder="searching..."></input>
-          <input type="submit"
-            onClick="console.log('testing')"
-          >Go!</input>
+          <input type="text" placeholder="searching..." 
+          onChange={this.props.onChange}></input>
+          <button type="submit"
+          onClick={}
+          >Go!</button>
         </form>
       </div>
     );
