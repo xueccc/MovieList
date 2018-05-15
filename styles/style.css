@@ -1,0 +1,26 @@
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+body {
+  border: 3px;
+  border-style: solid;
+  border-color: lightgrey;
+  
+}
+
+.title {
+  background-color: rgb(245, 245, 245);
+  border-bottom: 2px solid lightgrey;
+  padding: 20px;
+
+}
+
+.movie {
+  border: 2px solid lightgrey;
+  padding: 20px;
+  margin: 10px;
+
+}
+
+.search {
+  padding: 20px;
+}

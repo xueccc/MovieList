@@ -1,0 +1,44 @@
+{
+  "name": "movielist",
+  "version": "1.0.0",
+  "description": "movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline -w",
+    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xueccc/MovieList.git"
+  },
+  "keywords": [
+    "movie"
+  ],
+  "author": "xue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xueccc/MovieList/issues"
+  },
+  "homepage": "https://github.com/xueccc/MovieList#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.5.0",
+    "chai": "^3.5.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "2.3.3",
+    "sinon": "1.17.3"
+  }
+}
