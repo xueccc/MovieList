@@ -1,4 +1,4 @@
-class Search extends React.Component {
+class AddMovie extends React.Component {
 
   constructor(props) {
     super(props);
@@ -6,16 +6,15 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div className="search"> 
-        <form action="search">
-          <input type="text" placeholder="Search" 
+      <div className="addMovie"> 
+        <form>
+          <input type="text" placeholder="add movie title here" 
           onChange={this.props.onChange}></input>
           <button type="button"
           onClick={this.props.onClick}
-          >Go!</button>
+          >Add</button>
         </form>
       </div>
     );
   }
 }
-

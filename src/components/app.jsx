@@ -30,6 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="title"><h1>MovieList</h1></div>
+        <AddMovie />
         <Search onChange={this.onChange} onClick={this.onClick}/>
         <MovieList movieList={this.state.collections}/>
       </div>
