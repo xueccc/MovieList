@@ -3,16 +3,32 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchItem: '',
-      collections: window.movies
+      collections: [],
+      addMovie: ''
     }
-    this.onChange = this.onChange.bind(this);
-    this.onClick = this.onClick.bind(this);
+    // this.onChangeSearch = this.onChangeSearch.bind(this);
+    // this.onClickSearch = this.onClickSearch.bind(this);
   }
   
-  onChange(event){
+  //add movie to list
+  handleAddMovie(event){
+    this.setState({addMovie: {title: event.target.value}});
+  }
+  
+  onClickAddMovie(){
+    var movieList = this.state.collections;
+    movieList.push(this.state.addMovie);
+    console.log(movieList);
+    // debugger;
+    this.setState({collections: movieList});
+  }
+  
+  
+  //search movies
+  onChangeSearch(event){
     this.setState({searchItem: event.target.value});
   }
-  onClick() {
+  onClickSearch() {
     event.preventDefault();
     
     var filteredMovies = this.state.collections.filter(movie =>
@@ -30,8 +46,8 @@ class App extends React.Component {
     return (
       <div>
         <div className="title"><h1>MovieList</h1></div>
-        <AddMovie />
-        <Search onChange={this.onChange} onClick={this.onClick}/>
+        <AddMovie addMovie={this.handleAddMovie.bind(this)} addBtn={this.onClickAddMovie.bind(this)} />
+        <Search onChangeSearch={this.onChangeSearch.bind(this)} onClickSearch={this.onClickSearch.bind(this)}/>
         <MovieList movieList={this.state.collections}/>
       </div>
     )

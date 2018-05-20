@@ -9,9 +9,9 @@ class Search extends React.Component {
       <div className="search"> 
         <form action="search">
           <input type="text" placeholder="Search" 
-          onChange={this.props.onChange}></input>
+          onChange={this.props.onChangeSearch}></input>
           <button type="button"
-          onClick={this.props.onClick}
+          onClick={this.props.onClickSearch}
           >Go!</button>
         </form>
       </div>

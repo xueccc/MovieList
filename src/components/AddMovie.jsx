@@ -8,10 +8,12 @@ class AddMovie extends React.Component {
     return (
       <div className="addMovie"> 
         <form>
-          <input type="text" placeholder="add movie title here" 
-          onChange={this.props.onChange}></input>
-          <button type="button"
-          onClick={this.props.onClick}
+          <input type="text" placeholder="Add movie title here"
+          onChange={this.props.addMovie}
+          >
+          </input>
+          <button className="addBtn" type="button"
+          onClick={this.props.addBtn}
           >Add</button>
         </form>
       </div>

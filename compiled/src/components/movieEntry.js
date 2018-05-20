@@ -1,0 +1,6 @@
+"use strict";
+
+var MovieEntry = function MovieEntry() {
+  React.createElement("ul", null);
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL21vdmllRW50cnkuanN4Il0sIm5hbWVzIjpbIk1vdmllRW50cnkiXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBSUEsYUFBYSxTQUFiQSxVQUFhLEdBQU07QUFDckI7QUFFRCxDQUhEIiwiZmlsZSI6Im1vdmllRW50cnkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgTW92aWVFbnRyeSA9ICgpID0+IHtcbiAgPHVsPlxuICA8L3VsPlxufSJdfQ==
