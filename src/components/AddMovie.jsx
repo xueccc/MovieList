@@ -12,7 +12,7 @@ class AddMovie extends React.Component {
           onChange={this.props.addMovie}
           >
           </input>
-          <button className="addBtn" type="button"
+          <button className="greenBtn" type="button"
           onClick={this.props.addBtn}
           >Add</button>
         </form>

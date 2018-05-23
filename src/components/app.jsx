@@ -4,22 +4,38 @@ class App extends React.Component {
     this.state = {
       searchItem: '',
       collections: [],
-      addMovie: ''
+      addMovie: '',
+      toggleWatch: ''
     }
-    // this.onChangeSearch = this.onChangeSearch.bind(this);
-    // this.onClickSearch = this.onClickSearch.bind(this);
   }
   
+  //toggle watched
+  toggleWatched(event){
+    var movieWatched = event.target.value;
+    console.log(movieWatched);
+    var movieList = this.state.collections;
+   
+    for(var i=0; i<movieList.length; i++) {
+      if (movieList[i].title === movieWatched) {
+        if (movieList[i].watched){
+          console.log(movieList[i].title, 'change to false');
+          movieList[i].watched = false;
+        } else {
+          console.log(movieList[i].title, 'change to true');
+          movieList[i].watched = true;
+        }
+      }
+    }
+  }
+
   //add movie to list
   handleAddMovie(event){
-    this.setState({addMovie: {title: event.target.value}});
+    this.setState({addMovie: {title: event.target.value, watched:false}});
   }
   
   onClickAddMovie(){
     var movieList = this.state.collections;
     movieList.push(this.state.addMovie);
-    console.log(movieList);
-    // debugger;
     this.setState({collections: movieList});
   }
   
@@ -46,9 +62,13 @@ class App extends React.Component {
     return (
       <div>
         <div className="title"><h1>MovieList</h1></div>
+        <div className="filter">
         <AddMovie addMovie={this.handleAddMovie.bind(this)} addBtn={this.onClickAddMovie.bind(this)} />
         <Search onChangeSearch={this.onChangeSearch.bind(this)} onClickSearch={this.onClickSearch.bind(this)}/>
-        <MovieList movieList={this.state.collections}/>
+        </div>
+        <button className="watched" type="button">Watched</button>
+        <button className="towatch" type="button">To watch</button>
+        <MovieList movieList={this.state.collections} toggleWatched={this.toggleWatched.bind(this)} />
       </div>
     )
   };
@@ -56,12 +76,3 @@ class App extends React.Component {
 }
 
 
-var movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
-];
-
-window.movies = movies;
