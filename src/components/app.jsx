@@ -4,8 +4,10 @@ class App extends React.Component {
     this.state = {
       searchItem: '',
       collections: [],
+      allMovies: [],
       addMovie: '',
-      toggleWatch: ''
+      toggleWatch: '',
+      displayWatchedMovies: false
     }
   }
   
@@ -34,9 +36,9 @@ class App extends React.Component {
   }
   
   onClickAddMovie(){
-    var movieList = this.state.collections;
+    var movieList = this.state.allMovies;
     movieList.push(this.state.addMovie);
-    this.setState({collections: movieList});
+    this.setState({collections: movieList, allMovies: movieList});
   }
   
   
@@ -58,6 +60,22 @@ class App extends React.Component {
   }
 
 
+  //filter  
+  filterMovieList(e){
+    if (e.target.name === "Watched"){
+      var movieList = this.state.allMovies.filter((movie)=>{
+       return movie.watched === true;
+      })
+      this.setState({collections: movieList});
+    }
+    if (e.target.name === "toWatch"){
+      var movieList = this.state.allMovies.filter((movie)=>{
+       return movie.watched === false;
+      })
+      this.setState({collections: movieList});
+    }
+  }
+
   render() {
     return (
       <div>
@@ -66,8 +84,12 @@ class App extends React.Component {
         <AddMovie addMovie={this.handleAddMovie.bind(this)} addBtn={this.onClickAddMovie.bind(this)} />
         <Search onChangeSearch={this.onChangeSearch.bind(this)} onClickSearch={this.onClickSearch.bind(this)}/>
         </div>
-        <button className="watched" type="button">Watched</button>
-        <button className="towatch" type="button">To watch</button>
+        <button className="watched" name="Watched" type="button"
+          onClick={this.filterMovieList.bind(this)}
+        >Watched</button>
+        <button className="towatch" name="toWatch" type="button"
+          onClick={this.filterMovieList.bind(this)}
+        >To watch</button>
         <MovieList movieList={this.state.collections} toggleWatched={this.toggleWatched.bind(this)} />
       </div>
     )
