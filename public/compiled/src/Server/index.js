@@ -1,0 +1,10 @@
+'use strict';
+
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '../../public'));
+
+app.listen(3000, function () {
+  return console.log('App listening to port 3000!');
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9TZXJ2ZXIvaW5kZXguanMiXSwibmFtZXMiOlsiZXhwcmVzcyIsInJlcXVpcmUiLCJhcHAiLCJ1c2UiLCJzdGF0aWMiLCJfX2Rpcm5hbWUiLCJsaXN0ZW4iLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiOztBQUFBLElBQUlBLFVBQVVDLFFBQVEsU0FBUixDQUFkO0FBQ0EsSUFBSUMsTUFBTUYsU0FBVjtBQUNBRSxJQUFJQyxHQUFKLENBQVFILFFBQVFJLE1BQVIsQ0FBZUMsWUFBWSxjQUEzQixDQUFSOztBQUVBSCxJQUFJSSxNQUFKLENBQVcsSUFBWCxFQUFpQjtBQUFBLFNBQUlDLFFBQVFDLEdBQVIsQ0FBWSw2QkFBWixDQUFKO0FBQUEsQ0FBakIiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgZXhwcmVzcyA9IHJlcXVpcmUoJ2V4cHJlc3MnKTtcbnZhciBhcHAgPSBleHByZXNzKCk7XG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKF9fZGlybmFtZSArICcuLi8uLi9wdWJsaWMnKSk7XG5cbmFwcC5saXN0ZW4oMzAwMCwgKCk9PmNvbnNvbGUubG9nKCdBcHAgbGlzdGVuaW5nIHRvIHBvcnQgMzAwMCEnKSk7Il19

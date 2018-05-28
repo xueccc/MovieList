@@ -51,5 +51,11 @@ body {
 }
 
 .watchedEntry {
-  float:right;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.movieDetailsList {
+  list-style-type:none;
 }

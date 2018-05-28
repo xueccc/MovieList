@@ -15,7 +15,7 @@ class Search extends React.Component {
           >Go!</button>
         </form>
       </div>
-    );
+    )
   }
 }
-
+jdhfsdk

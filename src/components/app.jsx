@@ -32,7 +32,7 @@ class App extends React.Component {
 
   //add movie to list
   handleAddMovie(event){
-    this.setState({addMovie: {title: event.target.value, watched:false}});
+    this.setState({addMovie: {title: event.target.value, watched:false, displayDetails:false}});
   }
   
   onClickAddMovie(){
@@ -57,11 +57,13 @@ class App extends React.Component {
     }
 
     this.setState({collections: filteredMovies});
+
+    
   }
 
 
   //filter  
-  filterMovieList(e){
+  filterMovieList(e) {
     if (e.target.name === "Watched"){
       var movieList = this.state.allMovies.filter((movie)=>{
        return movie.watched === true;
@@ -76,6 +78,22 @@ class App extends React.Component {
     }
   }
 
+ //displayDetails
+ displayDetails(movieName) {
+  var movieList = this.state.collections;
+  movieList.forEach((movie)=>{
+    if (movie.title === movieName) {
+      if (movie.displayDetails === true) {
+        movie.displayDetails = false;
+      } else {
+        movie.displayDetails = true;
+      }
+    }
+  })
+  this.setState({collections: movieList});
+  
+ }
+
   render() {
     return (
       <div>
@@ -84,13 +102,18 @@ class App extends React.Component {
         <AddMovie addMovie={this.handleAddMovie.bind(this)} addBtn={this.onClickAddMovie.bind(this)} />
         <Search onChangeSearch={this.onChangeSearch.bind(this)} onClickSearch={this.onClickSearch.bind(this)}/>
         </div>
+        <div>
         <button className="watched" name="Watched" type="button"
           onClick={this.filterMovieList.bind(this)}
         >Watched</button>
         <button className="towatch" name="toWatch" type="button"
           onClick={this.filterMovieList.bind(this)}
         >To watch</button>
-        <MovieList movieList={this.state.collections} toggleWatched={this.toggleWatched.bind(this)} />
+        </div>
+        <MovieList movieList={this.state.collections} 
+          toggleWatched={this.toggleWatched.bind(this)} 
+          displayDetails={this.displayDetails.bind(this)}
+        />
       </div>
     )
   };
